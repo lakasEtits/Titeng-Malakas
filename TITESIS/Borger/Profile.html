@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+   
+
+   /* Customize the navbar */
+   .custom-navbar {
+      padding-top: 1rem; /* Adjust the top padding to adjust the height */
+      padding-bottom: 1rem; /* Adjust the bottom padding to adjust the height */
+      padding-left: 50px; /* Adjust the left side padding */
+      padding-right: 10px; /* Adjust the right side padding */
+      background-color: #FFA559; /* Set the background color of the navbar with opacity */
+      justify-content: space-between; /* Align items horizontally */
+    }
+     /* Make nav links bold and white */
+     .custom-navbar .navbar-nav .nav-link {
+      color: #0c0b0b;
+      font-weight: bold;
+      font-size: 30px; /* Brand font size */
+      border: 5px solid #FFA559;; /* Add an outline style to the buttons */
+      border-radius: 5px; /* Add rounded corners to the buttons */
+      padding: 0px 5px; /* Add padding to the buttons */
+      margin: 0 5px; /* Add margin to separate the buttons */
+    }
+
+    /* Navbar Brand Styles */
+    .custom-navbar .navbar-brand img {
+      max-height: 80px; /* Set the maximum height to maintain proportionality */
+    }
+
+     /* Dropdown Button Styles */
+     .dropdown-btn {
+      background: none;
+      border: none;
+      margin-right: 10px;
+    }
+
+    /* Dropdown Icon Styles */
+    .dropdown-icon {
+      width: 30px; /* Adjust the width of the icon */
+      height: 30px; /* Adjust the height of the icon */
+    }
+
+     /* Customize the container below the navbar */
+     .custom-container {
+      background-color: #e6bf1165; /* Set the background color of the container */
+      padding-top: 2rem; /* Adjust the padding as needed */
+      min-height: calc(100vh - 70px); /* 100% viewport height minus navbar height */
+    }
+
+    /* Body Container Styles */
+    #body-container {
+      background-image: url('/Assets/school\ bg.png'); /* Replace 'your-container-background-image.jpg' with your actual image path */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #e03939; /* Background color of the container */
+      color: #16e519; /* Text color */
+      font-family: Arial, sans-serif; /* Font family */
+      font-size: 18px; /* Font size */
+      text-align: center; /* Text alignment */
+      padding: 20px; /* Padding for the container content */
+    }
+    
+       /* Footer Styles */
+       .custom-footer {
+      background-color: #FFA559;
+      color: #f3f2ee;
+      text-align: center;
+      padding: 20px;
+    }
+
+  </style>
+  <title>wit</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <div class="container-fluid d-flex justify-content-between"> <!-- Use container-fluid and d-flex to align items horizontally -->
+      <!-- Navbar Brand (Clickable Logo) -->
+      <a class="navbar-brand" href="/Homepage/index.html">
+        <img src="/Assets/WIT Logo.png" alt="Logo" class="d-inline-block align-text-top">
+      </a>
+
+      <!-- Toggle Button for Mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="/RF/Rf.html">REGISTRATION FORM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Accounting Balance/Acc Balance.html">ACCOUNT BALANCE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">FAQS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+
+      <!-- Dropdown Button -->
+      <li class="nav-item dropdown">
+        <button class="btn dropdown-toggle dropdown-btn" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="/Assets/list.svg" alt="Dropdown Icon" class="dropdown-icon">
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/Profile/Prof.html">
+            <img src="/Assets/person-circle.svg" alt="Profile Icon" class="dropdown-icon">
+            Profile
+          </a>
+          <a class="dropdown-item" href="#">
+            <img src="/Assets/gear-fill.svg" alt="Settings Icon" class="dropdown-icon">
+            Settings
+          </a>
+          <a class="dropdown-item" href="#">
+            <img src="/Assets/box-arrow-right.svg" alt="Logout Icon" class="dropdown-icon">
+            Logout
+      <!-- End Dropdown Button -->
+    </div>
+  </nav>
+
+  <!-- Body Container -->
+  <div class="container-fluid" id="body-container">
+    <!-- Your Page Content Goes Here -->
+    <!-- Container below the navbar -->
+  <div class="container-fluid custom-container">
+    <div class="row justify-content-center">
+      <div class="col-6 text-center">
+        <img src="/WIT_Logo_copy.png" alt="Centered Image" style="max-width: 25%; height: auto;">
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col">
+        <h2 class="text-center">Personal Information</h2>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col">
+        <div class="container-fluid">
+          <table class="table table-bordered custom-table">
+            <tr>
+              <td style="padding-right: 10px; width: 25%;">Name:</td>
+              <td style="width: 25%;">John Doe</td>
+              <td style="padding-right: 10px; width: 25%;">Age:</td>
+              <td style="width: 25%;">30</td>
+            </tr>
+            <tr>
+              <td style="padding-right: 10px; width: 25%;">Address:</td>
+              <td style="width: 25%;">123 Main St, City</td>
+              <td style="padding-right: 10px; width: 25%;">Year Level:</td>
+              <td style="width: 25%;">4th Year</td>
+            </tr>
+            <tr>
+              <td style="padding-right: 10px; width: 25%;">Phone Number:</td>
+              <td style="width: 25%;">555-1234</td>
+              <td style="padding-right: 10px; width: 25%;">Email:</td>
+              <td style="width: 25%;">johndoe@example.com</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="custom-footer">
+    &copy; 2023 Western Institute of Technology
+  </footer>
+
+  <!-- Link to Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

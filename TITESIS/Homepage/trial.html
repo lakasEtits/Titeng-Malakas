@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Navbar Styles */
+    .custom-navbar {
+      background-color: #FFA559;
+      padding: 1rem;
+      position: fixed; /* Fix the navbar at the top */
+      width: 100%; /* Make the navbar full-width */
+      z-index: 2; /* Higher z-index to appear above other elements */
+    }
+
+    .custom-navbar .navbar-brand img {
+      max-height: 70px; /* Increase the logo size */
+    }
+
+    .navbar-header {
+      text-align: center; /* Center-align the header text */
+    }
+
+    /* Sidebar Styles */
+    .custom-sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      background-color: #FFA559;
+      padding-top: 1rem;
+      padding-left: 20px;
+      background-color: #FFA559;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 1; /* Lower z-index for sidebar */
+    }
+
+    .custom-sidebar .nav-link {
+      color: #0c0b0b;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 10px 15px;
+      margin: 10px 0;
+      border: 2px solid transparent;
+      border-radius: 5px;
+    }
+
+    .custom-sidebar .nav-link:hover,
+    .custom-sidebar .nav-link:focus {
+      border-color: #3f18cefc;
+    }
+
+    /* Body Container Styles */
+    #body-container {
+      margin-left: 250px;
+      background-color: #e03939;
+      color: #16e519;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Footer Styles */
+    .custom-footer {
+      background-color: #FFA559;
+      color: #f3f2ee;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+  <title>wit</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+    <!-- Navbar Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img src="/Assets/WIT Logo.png" alt="Logo" class="d-inline-block align-text-top">
+      </a>
+      <h4>Western Institute of Technology</h4> <!-- Add header text -->
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <div class="custom-sidebar">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="/RF/Rf.html">REGISTRATION FORM</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Accounting Balance/Acc Balance.html">ACCOUNT BALANCE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">FAQS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Body Container -->
+  <div class="container-fluid" id="body-container">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci itaque obcaecati vitae ullam ut, voluptate molestiae totam libero odit voluptatibus sint exercitationem esse veritatis sed reprehenderit fugiat aperiam unde laudantium.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="custom-footer">
+    &copy; 2023 Western Institute of Technology
+  </footer>
+
+  <!-- Link to Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapse Sidebar on Hover</title>
+    <style>
+        /* Styling for the body */
+        body {
+            background-image: url(/Assets/school\ bg.png); /* Replace with the path to your background image */
+            background-size: cover; /* Adjust to cover the entire viewport */
+            background-repeat: no-repeat; /* Prevent background image from repeating */
+            background-attachment: fixed; /* Fix the background image to the viewport */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        /* Basic styling for the navbar */
+        #navbar {
+            height: 120px;
+            background-color: #FFA559;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        /* Styling for the header text */
+        #header-text {
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            margin-right: 1200px; /* Add margin to separate it from the brand */
+        }
+
+        /* Styling for the dropdown button container */
+        #dropdown-container {
+            display: flex;
+            align-items: center;
+            position: relative; /* Added positioning for the dropdown content */
+            margin-right: 15px; /* Add margin to separate it from the brand */
+        }
+
+        /* Styling for the dropdown button */
+        #dropdown-button {
+            background-color: #FFA559;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Styling for the dropdown button icon */
+        #dropdown-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        /* Styling for the dropdown content */
+        #dropdown-content {
+            display: none;
+            position: absolute;
+            top: 40px; /* Adjust the top position to add spacing */
+            background-color: #FFA559;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        /* Styling for dropdown content links */
+        #dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center; /* Center the content vertically */
+            gap: 10px; /* Add some spacing between image and text */
+        }
+
+        /* Basic styling for the sidebar */
+        #sidebar {
+            width: 280px;
+            position: fixed;
+            top: 127px;
+            left: -260px; /* Initially, hide the sidebar by moving it off-screen */
+            background-color: #FFE6C7;
+            transition: left 0.3s;
+        }
+
+        /* Styling for the sidebar when it's expanded */
+        #sidebar.expanded {
+            left: 0;
+        }
+
+        /* Styling for the sidebar nav links */
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #sidebar ul li {
+            padding: 50px;
+        }
+
+        /* Styling for the sidebar nav links */
+        #sidebar ul li a {
+            color: #0e0202;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s; /* Add a smooth transition effect */
+            padding: 10px 20px; /* Add padding to make the links pill-rounded */
+            border-radius: 20px; /* Make the links pill-rounded */
+            margin: 5px 0; /* Add some margin to separate the links */
+        }
+
+        #sidebar ul li a:hover {
+            color: #c60f0f; /* Change the color on hover */
+            background-color: #0fc65e; /* Add a background color on hover */
+        }
+
+        #sidebar ul li a img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        /* Styling for the vertical div */
+        #sidebar .vertical-div {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 20px;
+            background-color: #FFE6C7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* Styling for the collapse button */
+        #collapse-button {
+            color: #c60f0f;
+        }
+
+        /* Styling for the main content */
+        #main-content {
+            flex: 1;
+            margin-left: 30px; /* Adjust this margin to match the sidebar width */
+            padding: 20px;
+        }
+         /* Styling for the navbar brand image */
+         .navbar-brand img {
+            width: 100px; /* Adjust the width to make it smaller */
+            height: 100px; /* Adjust the height to make it smaller */
+        }
+        /* Styling for the footer */
+        footer {
+            background-color: #FFA559;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- The navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div id="navbar">
+            <a class="navbar-brand" href="/Homepage/home.html">
+                <img src="/Assets/WIT Logo.png" alt="Logo" class="d-inline-block align-text-top">
+            </a>
+            <span id="header-text">Western Institute of Technology</span>
+            <div id="dropdown-container">
+                <button id="dropdown-button">
+                    <img src="/Assets/list.svg" alt="Dropdown Icon" id="dropdown-icon">
+                </button>
+                <!-- Dropdown content -->
+                <div id="dropdown-content">
+                    <a href="#"><img src="/Assets/person-circle.svg" alt="Profile Icon">Profile</a>
+                    <a href="#"><img src="/Assets/gear-fill.svg" alt="Setting Icon">Setting</a>
+                    <a href="#"><img src="/Assets/box-arrow-right.svg" alt="Logout Icon">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- The container for sidebar and main content -->
+    <div id="container">
+        <!-- Sidebar and main content wrapper -->
+        <div id="sidebar-main-wrapper">
+            <!-- The sidebar container -->
+            <div id="sidebar">
+                <!-- Vertical div with the collapse button -->
+                <div class="vertical-div" id="collapse-button">
+                    >
+                </div>
+                <ul>
+                    <li><a href="/RF/RF.html"><img src="/Assets/list.svg" alt="Icon 1">Registration Form</a></li>
+                    <li><a href="#"><img src="/Assets/list.svg" alt="Icon 2">Account Balance</a></li>
+                    <li><a href="#"><img src="/Assets/list.svg" alt="Icon 3">FAQs</a></li>
+                    <li><a href="#"><img src="/Assets/list.svg" alt="Icon 3">Contacts</a></li>
+                
+                    <!-- Add more items as needed -->
+                </ul>
+            </div>
+
+            <!-- Main content -->
+            <div id="main-content">
+                <p>Hover over the sidebar to expand it.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex nobis incidunt nemo minus mollitia accusantium, enim impedit, accusamus, voluptatem facere at neque eos dolores aperiam? Doloribus sit optio aliquid expedita!</p>
+            </div>
+        </div>
+
+        <!-- The footer -->
+        <footer>
+            &copy; 2023 Western Institute of Technology
+        </footer>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const collapseButton = document.getElementById("collapse-button");
+
+        // Add hover functionality
+        sidebar.addEventListener("mouseenter", () => {
+            sidebar.classList.add("expanded");
+        });
+
+        sidebar.addEventListener("mouseleave", () => {
+            sidebar.classList.remove("expanded");
+        });
+
+        // Add click event to the collapse button
+        collapseButton.addEventListener("click", () => {
+            sidebar.classList.remove("expanded");
+        });
+    </script>
+</body>
+</html>

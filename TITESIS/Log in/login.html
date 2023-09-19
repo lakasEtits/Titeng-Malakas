@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website with Background Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('/Assets/school\ bg.png') center/cover fixed;
+            
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 60px;
+            background-color: #FFE6C7;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .login-form img {
+            max-width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+
+        .login-form input[type="number"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.911);
+            color: #161616f0;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-form input[type="submit"] {
+            background-color: #FF9944;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <img src="/Assets/WIT Logo.png" alt="Logo">
+            <form action="#" method="post">
+                <input type="number" name="number" id="numericInput" placeholder="Enter a number" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Log In">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

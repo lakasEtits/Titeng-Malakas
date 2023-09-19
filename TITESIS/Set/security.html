@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+     <style>      
+       body {
+        background-image: url(ig.png); /* Replace with the path to your background image */
+        background-size: cover; /* Adjust to cover the entire viewport */
+        background-repeat: no-repeat; /* Prevent background image from repeating */
+        background-attachment: fixed; /* Fix the background image to the viewport */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+    }
+    /* Customize the navbar */
+    .custom-navbar {
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #FFA559;
+        justify-content: space-between;
+    }
+
+    /* Add background color to active nav items */
+    .custom-navbar .navbar-nav .nav-item.active .nav-link {
+        background-color: #9bf805fc;
+        color: #fff;
+    }
+
+    /* Navbar Brand Styles */
+    .custom-navbar .navbar-brand {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 20px;
+        color: #e50e0e;
+        text-decoration: none;
+    }
+
+    .custom-navbar .navbar-brand img {
+        height: 50px;
+        width: auto;
+        margin-right: 10px;
+    }
+
+    /* Dropdown Button Styles */
+    .dropdown-btn {
+        background: none;
+        border: none;
+        margin-right: 30px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    /* Dropdown Icon Styles */
+    .dropdown-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Sidebar Styles */
+           #sidebar {
+        min-height: 100vh;
+        width: 280px;
+        position: fixed;
+        top:80px;
+        left: -260px; /* Initially, hide the sidebar by moving it off-screen */
+        background-color: #FFE6C7;
+        transition: left 0.3s;
+    }
+
+    /* Styling for the sidebar when it's expanded */
+    #sidebar.expanded {
+        left: 0;
+    }
+
+    /* Styling for the sidebar nav links */
+    #sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    #sidebar ul li {
+        padding: 50px;
+    }
+
+    /* Styling for the sidebar nav links */
+    #sidebar ul li a {
+        color: #0e0202;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        transition: color 0.2s; /* Add a smooth transition effect */
+        padding: 10px 20px; /* Add padding to make the links pill-rounded */
+        border-radius: 20px; /* Make the links pill-rounded */
+        margin: 5px 0; /* Add some margin to separate the links */
+    }
+
+    #sidebar ul li a:hover {
+        color: #c60f0f; /* Change the color on hover */
+        background-color: #0fc65e; /* Add a background color on hover */
+    }
+
+    #sidebar ul li a img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    /* Styling for the vertical div */
+    #sidebar .vertical-div {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 20px;
+        background-color: #FFE6C7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    /* Styling for the collapse button */
+    #collapse-button {
+        color: #c60f0f;
+    }
+
+    /* Styling for the content */
+    #content {
+        flex: 1;
+        margin-left: 30px; /* Adjust this margin to match the sidebar width */
+        padding: 20px;
+    }
+     /* Styling for the navbar brand image */
+     .navbar-brand img {
+        width: 100px; /* Adjust the width to make it smaller */
+        height: 100px; /* Adjust the height to make it smaller */
+    }
+      /* Style for the footer */
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height:40px;
+        background-color: #FFA559;; /* Customize the background color */
+        color: white; /* Customize the text color */
+        text-align: center;
+        padding: 10px 0; /* Add padding as needed */
+        left:0;
+    }
+   /* Your existing CSS code here */
+
+    /* Media Query for Laptops and Larger Screens */
+    @media (min-width: 720px) {
+        /* Customize styles for laptops here */
+
+        /* Add more styles specific to laptops */
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    li{
+        list-style: none;
+        text-decoration: flex;
+    }
+    .heading{
+       color: black;
+       font-weight: bold;
+       margin-left: -100px;
+       margin-top: -40px;
+    }
+    .side-menu{
+        margin-left: 30px;
+        width: 50vh;
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+    }
+    .side-menu .h-title{
+        height: 30vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 50px;
+    }
+    .side-menu ul{
+        margin-top:-80px;
+    }
+    .side-menu li{
+        font-size: 20px;
+        padding: 20px 40px;
+        color: black;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        cursor: pointer;
+
+    }
+    .side-menu li:hover {
+        background: transparent;
+        border-radius: 19px;
+        border: 2px solid #000000;
+        padding: 2px;
+        margin-right:70px;
+        transition: background-color 0.3s ease;
+    }
+    .v-line{
+        border-left: 2px solid black;
+        height:360px;
+        left: 320px;
+        top:180px;
+        display: flex;
+        position: fixed;
+    }
+    /* Security page */
+    .cp{
+        position: fixed;
+        left: 320px;
+        top: 130px;
+        display: flex;
+        flex-direction: column;
+    }
+    .change-pass{
+        position: fixed;
+        top: 160px;
+        font-size: 20px;
+        text-align:center;
+        display: flex;
+        flex-direction: column;
+        margin-left: 300px;
+    }
+    #p2{
+        font-size: 18px;
+        margin-top: -20px;
+        margin-left:190px;
+    }
+    .h3 {
+        margin-left: 180px;
+    }
+    .h4{
+        top: 320px;
+        left:1120px;
+        font-size: 16px;
+        font-weight: bold;
+        position: fixed;     
+    }
+    /* Apply your existing CSS styles here */
+    .password-form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: left;
+        position: absolute;
+        top: 230px;
+        left: 440px;
+    }
+
+    label {
+        margin-top: 20px;
+
+    }
+
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid ;
+        border-radius: 6px;
+        margin-top: 20px;
+        background-color: #f9cba4;
+    }
+    button {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+        margin-left: 150px;
+    }
+
+    button:hover {
+        background-color: #f9cba4;
+    }
+    /* settings */
+        #img{
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    left: 450px;
+    top:100px;
+    display: flex;
+    position: fixed;
+}
+.custom-button{
+    display: inline-block;
+    flex-direction: column;
+    padding: 1px 20px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    margin: 10px;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    margin-left:340px;
+    position: flex;
+}
+.custom-button:hover{
+background-color:#ffa559;
+}
+#image-upload{
+display: none;
+}
+#delete-upload{
+display: none; 
+}
+#delete-upload: checked + label[for="delete-upload"]::after{
+content: delete;
+}
+
+.user-info {
+margin-left: 320px; /* Adjust the margin as needed */
+padding: 20px; /* Add some padding to the user information section */
+position: relative;
+z-index: 1; /* Ensure user information is above the vertical line */
+}
+
+a{
+color: black;
+}
+.names h1{
+top: 320px;
+left: 450px;
+position: fixed;
+font-size: 16px;
+font-display: flex;
+ font-weight: bold;
+}
+.name1{
+position: fixed;
+top: 120px;
+left: 350px;
+font-size: 16px;
+font-weight: bold;
+}
+.h2 {
+top: 320px;
+left: 790px;
+position: fixed;
+font-size: 16px;
+font-weight: bold;
+font-display: flex;
+}
+.wrap {
+top:360px;
+left: 450px;
+border: 1px solid #000000;
+width: 300px;
+height: 40px;
+background-color: white;
+align-items:center;
+justify-content: center;
+border-radius: 6px;
+display: flex;
+position: fixed;
+font-size: 16px;
+font-weight: bold;
+
+}
+.wrap2 {
+top:360px;
+left: 790px;
+border: 1px solid #000000;
+width: 300px;
+height: 40px;
+background-color: white;
+align-items:center;
+justify-content: center;
+border-radius: 6px;
+display: flex;
+position: fixed;
+font-size: 16px;
+font-weight: bold;
+}
+.ads p{
+top: 410px;
+left: 450px;
+position: fixed;
+font-size: 16px;
+font-weight: bold;
+}
+.wrap3 {
+top:450px;
+left:450px;
+border: 1px solid #000000;
+width: 645px;
+height: 40px;
+background-color: white;
+align-items:center;
+text-indent: 50px;
+border-radius: 6px;
+display: flex;
+position: fixed;
+font-size: 16px;
+font-weight: bold;
+}
+.birthdate{
+top: 500px;
+left: 450px;
+position: fixed;
+font-size: 16px;
+ font-weight: bold;
+}
+.wrap4{
+top:540px;
+left:450px;
+border: 1px solid #000000;
+width: 200px;
+height: 40px;
+background-color: white;
+align-items:center;
+justify-content: center;
+border-radius: 6px;
+display: flex;
+position: fixed;
+font-size: 16px;
+font-weight: bold;
+}
+.wrap5{
+top:360px;
+left:1120px;
+border: 1px solid #000000;
+width: 100px;
+height: 40px;
+background-color: white;
+border-radius: 6px;
+display: flex;
+position: fixed;
+font-size: 16px;
+font-weight: bold;
+justify-content: center;
+align-items: center;
+}
+
+#save-button{
+position: fixed;
+left: 1000px;
+bottom: 55px;
+border-radius: 5px;
+padding: 10px 20px;
+cursor: pointer;
+transition:  0.3s ease, transform 0.2s ease;
+background-color: white;
+}
+
+#save-button:hover{
+background-color: #ffa559;
+}
+
+#save-button:active{
+transform: scale(0.95);
+}</style>
+    <title>Security</title>
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <div class="container-fluid d-flex justify-content-between">
+        <!-- Navbar Brand (Clickable Logo with Text) -->
+        <a class="navbar-brand" href="/Homepage/index.html">
+            <img src="/Assets/WIT Logo.png" alt="Logo" class="d-inline-block align-text-top">
+            Western Institute of Technology
+        </a>
+
+        <!-- Dropdown Button -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle dropdown-btn" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="/Assets/list.svg" alt="Dropdown Icon" class="dropdown-icon">
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/Borger/Prof.html">
+                        <img src="/Assets/person-circle.svg" alt="Profile Icon" class="dropdown-icon">
+                        Profile
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <img src="/Assets/gear-fill.svg" alt="Settings Icon" class="dropdown-icon">
+                        Settings
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <img src="/Assets/box-arrow-right.svg" alt="Logout Icon" class="dropdown-icon">
+                        Logout
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <!-- End Dropdown Button -->
+    </div>
+</nav>
+
+<!-- Sidebar -->
+ <div id="sidebar">
+            <!-- Vertical div with the collapse button -->
+            <div class="vertical-div" id="collapse-button">
+                >
+            </div>
+            <ul>
+                <li><a href="/RF/RF.html"><img src="/Assets/list.svg" alt="Icon 1">Registration Form</a></li>
+                <li><a href="#"><img src="/Assets/list.svg" alt="Icon 2">Account Balance</a></li>
+                <li><a href="#"><img src="/Assets/list.svg" alt="Icon 3">FAQs</a></li>
+                <li><a href="#"><img src="/Assets/list.svg" alt="Icon 3">Contacts</a></li>
+            
+                <!-- Add more items as needed -->
+            </ul>
+        </div>
+
+<!-- Page Content -->
+<div class="side-menu">
+        <div class="h-title">
+            <div class="heading"> SETTINGS </div>
+        </div>
+        <ul>
+            <li><a href="set.html">Account Settings</a></li>
+            <li><a href="sec.html"><a href="Security.html">Security</a></li>
+            <li><a href="">Logout</a></li>
+        </ul>
+    </div>
+</div>
+<div class="v-line"></div>
+ <div class="name1">Kerth D. Gerasmia </div>
+            <div class="change-pass">
+                <div class="h3">Change Password</div><br>
+                <p id="p2">Your password shoudl include a combination <br>
+                    of numbers, letters and special characters(!$@%).<p>
+            </div>
+            <div class="password-form">
+        <form>
+            <label for="current-password"></label>
+            <input type="password" id="current-password" name="current-password" placeholder="Current Password" required>
+
+            <input type="password" id="new-password" name="new-password" placeholder="New Password" required>
+
+            <label for="retype-password"></label>
+            <input type="password" id="retype-password" name="retype-password" placeholder="Re-type New Password" required>
+
+            <button type="submit" id="change-password-button">Change Password</button>
+        </form>
+            </div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2023 Western Institute of Technology</p>
+    </div>
+</footer>
+
+<!-- Link to Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Add Font Awesome for icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+<script>
+    const sidebar = document.getElementById("sidebar");
+        const collapseButton = document.getElementById("collapse-button");
+
+        // Add hover functionality
+        sidebar.addEventListener("mouseenter", () => {
+            sidebar.classList.add("expanded");
+        });
+
+        sidebar.addEventListener("mouseleave", () => {
+            sidebar.classList.remove("expanded");
+        });
+
+        // Add click event to the collapse button
+        collapseButton.addEventListener("click", () => {
+            sidebar.classList.remove("expanded");
+        });
+</script>
+</body>
+</html>
